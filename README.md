@@ -72,12 +72,14 @@ Output: ```.message```: ```"Success"``` | ```"Error"```
 
 ## Registration System for Customers
 
-Members of the database have the following structure and parameters:
+The system accepts the following input for the registration of a new customer in the database.
+
+*Note: this is an exemplary and explanatory ```dataObject``. So, please, adjust properly your inputs.
 
 ```javascript
 dataObject = {
 	Id: "cus_00000001",
-	Name: "João da Silva Name",
+	Name: "João da Silva",
 	Email: "joaosilvafake@email.com",
 	Birthday: "1985-01-10",
 	Document: "XXX.XXX.XXX-XX" | , 
@@ -104,6 +106,10 @@ dataObject = {
 
 ## Registration System for Products
 
+The system accepts the following input for the registration of a new customer in the database.
+
+*Note: this is an exemplary and explanatory ```dataObject``. So, please, adjust properly your inputs.
+
 ```javascript
 dataObject = {
 	Id: "pro_00000001",
@@ -126,9 +132,13 @@ dataObject = {
 }
 ```
 
-## Extra Features
+## Local Database
 
-### Live Database
+For exemplary purposes, all the stored data is also stored in the ```window``` ```localStorage``` object.
+
+Type at the browser console ```localStorage``` to see all the stored data that you have entered while navigation in the website.
+
+## Live Database (not implemented)
 
 A [Google Sheets](mylink.com) integrated with the website through an Apps Script endpoint.
 
