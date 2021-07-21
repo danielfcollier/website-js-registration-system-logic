@@ -26,7 +26,7 @@ Input:
 
 Output: 
 - ```.isCreated```: type boolean
-- ```.message```: "Success" | "Error" | "Customer already created" 
+- ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
 
 ### Read
 
@@ -55,7 +55,7 @@ Input:
 - ```idIdentifier```: **required** > the Id of the object to be updated 
 - ```property: parameter```: the pair property and parameter to be updated
 
-Output: ```.message```: "Success" | "Error"
+Output: ```.message```: ```"Success"``` | ```"Error"```
 
 ### Delete
 
@@ -66,7 +66,7 @@ Output: ```.message```: "Success" | "Error"
 Input: 
 - ```idIdentifier```: the Id of the object to be deleted 
 
-Output: ```.message```: "Success" | "Error"
+Output: ```.message```: ```"Success"``` | ```"Error"```
 
 ## Registration System for Customers
 
