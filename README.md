@@ -94,7 +94,7 @@ dataObject = {
 	},
 	IsSameAddress: type boolean,
 	BillingAddress: {
-        ...DeliveryAddress,
+        ...DeliveryAddress
         // changed properties
     }
 }
@@ -107,7 +107,7 @@ dataObject = {
     Id: "pro_00000001",
 	SKU: "UGG-BB-PUR-06",
 	Description: "product description",
-	Category: "category"
+	Category: "category",
 	Status: "InStock" | "OutOfStock" | "ToOrder",
 	Quantity: integer,
 	Price: twoDecimalsFloat,
