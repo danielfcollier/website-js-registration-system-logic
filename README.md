@@ -23,6 +23,7 @@ const database = new Database();
 ### All Methods:
 
 \# Create:
+***
 
 ```javascript
 const {isCreated, message} = database.create(dataObject);
@@ -31,6 +32,7 @@ const {isCreated, message} = database.create(dataObject);
 > *See also [its description.](#-create)*
 
 \# Read:
+***
 
 Unique search:
 
@@ -138,7 +140,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 >
 > Output: ```message```: ```"Success"``` | ```"Error"```
 
-*Note: delete is a JavaScript reserved keyword that should be avoid to be used.
+*__Note__: delete is a JavaScript reserved keyword that should be avoid to be used.*
 
 ## Additional Features
 
