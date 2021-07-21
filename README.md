@@ -8,6 +8,10 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 ## Demo Page
 
+## Store Procedures
+
+All operations are CRUD (create, read, update, and delete) based with JS routines.
+
 ## Database Class
 
 Usage:
@@ -53,54 +57,43 @@ const fakeObject = database.mock();
 
 ### Methods Description
 
-#### \# Mock Object
-
-This method is provided to generate fake data to facilitate tests of the database logic.
-
-> Method:
+#### \# Generate Mock Object
 
 ```javascript
 .mock()
 ```
 
+This method is provided to generate fake data to facilitate tests of the database logic.
+
 > Input: **empty**
 
 > Output: returns a fake data object to be used to create new customers.
 
-
-#### Store Procedures
-
-All operations are CRUD (create, read, update, and delete) based with JS routines.
-
-###### \# Create
-
-Method:
+#### \# Create
 
 ```javascript
 .create(dataObject)
 ```
 
-Input: 
+> Input: 
 - ```dataObject```: object with properties for a given database member
 (see Customers Object and Products Object)
 
-Output: 
+> Output: 
 - ```.isCreated```: type boolean
 - ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
 
-##### \# Read
-
-Method:
+#### \# Read
 
 ```javascript
 .read({property: parameter})
 ```
 
-Input: 
+> Input: 
 - ```property```: the identifier for the given parameter
 - ```parameter```: the parameter to search through in the database
 
-Output: ```dataObject``` |  ```-1``` for not found 
+> Output: ```dataObject``` |  ```-1``` for not found 
 
 ##### \# Update
 
@@ -111,11 +104,11 @@ Output: ```dataObject``` |  ```-1``` for not found
 })
 ```
 
-Input: 
+> Input: 
 - ```idIdentifier```: **required** > the Id of the object to be updated 
 - ```property: parameter```: the pair property and parameter to be updated
 
-Output: ```message```: ```"Success"``` | ```"Error"```
+> Output: ```message```: ```"Success"``` | ```"Error"```
 
 ##### \# Delete
 
@@ -123,10 +116,10 @@ Output: ```message```: ```"Success"``` | ```"Error"```
 .remove(idIdentifier)
 ```
 
-Input: 
+> Input: 
 - ```idIdentifier```: the Id of the object to be deleted 
 
-Output: ```message```: ```"Success"``` | ```"Error"```
+> Output: ```message```: ```"Success"``` | ```"Error"```
 
 *Note: delete is a JavaScript reserved keyword that should be avoid to be used.
 
