@@ -20,11 +20,12 @@ Method:
 .create(dataObject)
 ```
 Input: 
-- ```dataObject``` (see Customers Object and Products Object)
+- ```dataObject```: object with properties for a given database member
+(see Customers Object and Products Object)
 
 Output: 
-- ```.isCreated`` - type boolean
-- ```.message```- "Success" | "Error" | "Customer already created" 
+- ```.isCreated```: type boolean
+- ```.message```: "Success" | "Error" | "Customer already created" 
 
 ### Read
 
