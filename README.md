@@ -12,7 +12,7 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 All operations are CRUD (create, read, update, and delete) based with JS routines.
 
-### Create
+### # Create
 
 Method:
 
@@ -28,7 +28,7 @@ Output:
 - ```.isCreated```: type boolean
 - ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
 
-### Read
+### \# Read
 
 Method:
 
@@ -74,10 +74,10 @@ Members of the database have the following structure and parameters:
 
 ```javascript
 dataObject = {
-    Id: "cus_XXXXXXXX",
-	Name: "Full Name",
-	Email: "your@email.com",
-	Birthday: "year-MM-dd",
+    Id: "cus_00000001",
+	Name: "João da Silva Name",
+	Email: "joaosilvafake@email.com",
+	Birthday: "1985-01-10",
 	Document: "XXX.XXX.XXX-XX" | , 
 	Type: "CPF" | "CPNJ",
 	ExtraDocument: "RG",
@@ -92,7 +92,7 @@ dataObject = {
 		Country: "Brasil",
 		Zipcode: "88.035-615"
 	}
-	IsSameAddress: boolean
+	IsSameAddress: type boolean
 	BillingAddress: {
         ...DeliveryAddress,
         // changed properties
@@ -104,8 +104,8 @@ dataObject = {
 
 ```javascript
 dataObject = {
-    Id: "pro_XXXXXXXX",
-	SKU: ,
+    Id: "pro_00000001",
+	SKU: "UGG-BB-PUR-06",
 	Description: "product description",
 	Category: "category"
 	Status: "InStock" | "OutOfStock" | "ToOrder",
@@ -127,6 +127,6 @@ dataObject = {
 
 ### Live Database
 
-A [Google Sheets](mylink.com) integrated with the website through a Apps Script endpoint.
+A [Google Sheets](mylink.com) integrated with the website through an Apps Script endpoint.
 
 The code in provided in this [repository](mylink.com).
