@@ -1,4 +1,4 @@
-# Website with Registration System for Ecommerce Store
+# Website with Registration System for Ecommerce
 
 Syntax: HTML, CSS, and, JS ES6+
 
@@ -13,6 +13,18 @@ Developed as part of the training Hiring Coders provided by VTEX:
 All operations are CRUD (create, read, update, and delete) based with JS routines.
 
 ### Create
+
+Method:
+
+```javascript
+.create(dataObject)
+```
+Input: 
+- ```dataObject``` (see Customers Object and Products Object)
+
+Output: 
+- ```.isCreated`` - type boolean
+- ```.message```- "Success" | "Error" | "Customer already created" 
 
 ### Read
 
