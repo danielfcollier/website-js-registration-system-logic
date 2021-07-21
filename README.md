@@ -17,7 +17,7 @@ All operations are CRUD (create, read, update, and delete) based with JS routine
 Usage:
 
 ```javascript
-const database = new Database(searchProperties);
+const database = new Database();
 ```
 
 ### All Methods:
@@ -32,8 +32,16 @@ const {isCreated, message} = database.create(dataObject);
 
 \# Read:
 
+Unique search:
+
 ```javascript
 const dataObject = database.read({property: parameter});
+```
+
+Non unique search:
+
+```javascript
+const dataObjArray = database.read({property: parameter});
 ```
 
 > *See also [its description.](#-read)*
