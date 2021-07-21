@@ -72,8 +72,8 @@ Output: ```.message```: ```"Success"``` | ```"Error"```
 
 Members of the database have the following structure and parameters:
 
-```
-{
+```javascript
+dataObject = {
 	Id: "cus_00000001",
 	Name: "João da Silva Name",
 	Email: "joaosilvafake@email.com",
@@ -104,7 +104,7 @@ Members of the database have the following structure and parameters:
 
 ```javascript
 dataObject = {
-    Id: "pro_00000001",
+	Id: "pro_00000001",
 	SKU: "UGG-BB-PUR-06",
 	Description: "product description",
 	Category: "category",
