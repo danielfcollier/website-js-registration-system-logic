@@ -60,13 +60,15 @@ Output: ```.message```: ```"Success"``` | ```"Error"```
 ### \# Delete
 
 ```javascript
-.delete(idIdentifier)
+.remove(idIdentifier)
 ```
 
 Input: 
 - ```idIdentifier```: the Id of the object to be deleted 
 
 Output: ```.message```: ```"Success"``` | ```"Error"```
+
+*Note: delete is a JavaScript reserved keyword that should be avoid to be used.
 
 ## Registration System for Customers
 
