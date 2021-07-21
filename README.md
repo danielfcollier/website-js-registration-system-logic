@@ -8,11 +8,71 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 ## Demo Page
 
-## Store Procedures
+## Database Class
+
+Usage:
+
+```javascript
+const database = new Database(searchProperties);
+```
+
+### All Methods:
+
+Create:
+
+```javascript
+const {isCreated, message} = database.create(dataObject);
+```
+
+Read:
+
+```javascript
+const dataObject = database.read({property: parameter})
+```
+
+Update:
+
+```javascript
+const message = database.update({
+	Id: idIdentifier,
+	property: parameter
+})
+```
+
+Delete:
+
+```javascript
+const message = database.remove(idIdentifier)
+```
+
+Mock:
+
+```javascript
+const fakeObject = database.mock();
+```
+
+### Methods Description
+
+#### Mock Object
+
+This method is provided to generate fake data to facilitate tests of the database logic.
+
+Method:
+
+```javascript
+.mock()
+```
+
+Input: **empty**
+
+Output: returns a fake data object to be used to create new customers.
+
+
+#### Store Procedures
 
 All operations are CRUD (create, read, update, and delete) based with JS routines.
 
-### \# Create
+###### \# Create
 
 Method:
 
@@ -28,7 +88,7 @@ Output:
 - ```.isCreated```: type boolean
 - ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
 
-### \# Read
+##### \# Read
 
 Method:
 
@@ -42,7 +102,7 @@ Input:
 
 Output: ```dataObject``` |  ```-1``` for not found 
 
-### \# Update
+##### \# Update
 
 ```javascript
 .update({
@@ -55,9 +115,9 @@ Input:
 - ```idIdentifier```: **required** > the Id of the object to be updated 
 - ```property: parameter```: the pair property and parameter to be updated
 
-Output: ```.message```: ```"Success"``` | ```"Error"```
+Output: ```message```: ```"Success"``` | ```"Error"```
 
-### \# Delete
+##### \# Delete
 
 ```javascript
 .remove(idIdentifier)
@@ -66,9 +126,13 @@ Output: ```.message```: ```"Success"``` | ```"Error"```
 Input: 
 - ```idIdentifier```: the Id of the object to be deleted 
 
-Output: ```.message```: ```"Success"``` | ```"Error"```
+Output: ```message```: ```"Success"``` | ```"Error"```
 
 *Note: delete is a JavaScript reserved keyword that should be avoid to be used.
+
+## Additional Features
+
+
 
 ## Registration System for Customers
 
