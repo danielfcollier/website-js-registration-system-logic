@@ -73,11 +73,9 @@ const fakeObject = database.mock();
 
 > *See also [its description.](#-create-mock-object)*
 
-***
-***
-### Methods Description
+## Methods Description
 
-#### \# Generate Mock Object
+### \# Generate Mock Object
 
 ```javascript
 .mock()
@@ -89,7 +87,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 >
 > Output: returns a fake data object to be used to create new customers.
 
-#### \# Create
+### \# Create
 
 ```javascript
 .create(dataObject)
@@ -103,7 +101,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 > - ```.isCreated```: type boolean
 > - ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
 
-#### \# Read
+### \# Read
 
 ```javascript
 .read({property: parameter})
@@ -115,7 +113,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 >
 > Output: ```dataObject``` | ```dataObjArray```|  ```-1``` for not found 
 
-#### \# Update
+### \# Update
 
 ```javascript
 .update({
@@ -130,7 +128,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 >
 > Output: ```message```: ```"Success"``` | ```"Error"```
 
-#### \# Delete
+### \# Delete
 
 ```javascript
 .remove(idIdentifier)
