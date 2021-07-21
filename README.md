@@ -57,15 +57,15 @@ const fakeObject = database.mock();
 
 This method is provided to generate fake data to facilitate tests of the database logic.
 
-- Method:
+> Method:
 
 ```javascript
 .mock()
 ```
 
-- Input: **empty**
+> Input: **empty**
 
-- Output: returns a fake data object to be used to create new customers.
+> Output: returns a fake data object to be used to create new customers.
 
 
 #### Store Procedures
