@@ -66,7 +66,7 @@ const fakeObject = database.mock();
 This method is provided to generate fake data to facilitate tests of the database logic.
 
 > Input: **empty**
-
+>
 > Output: returns a fake data object to be used to create new customers.
 
 #### \# Create
@@ -76,12 +76,12 @@ This method is provided to generate fake data to facilitate tests of the databas
 ```
 
 > Input: 
-- ```dataObject```: object with properties for a given database member
-(see Customers Object and Products Object)
-
+> - ```dataObject```: object with properties for a given database member
+> (see Customers Object and Products Object)
+>
 > Output: 
-- ```.isCreated```: type boolean
-- ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
+> - ```.isCreated```: type boolean
+> - ```.message```: ```"Success"``` | ```"Error"``` | ```"Customer already created"``` 
 
 #### \# Read
 
@@ -90,9 +90,9 @@ This method is provided to generate fake data to facilitate tests of the databas
 ```
 
 > Input: 
-- ```property```: the identifier for the given parameter
-- ```parameter```: the parameter to search through in the database
-
+> - ```property```: the identifier for the given parameter
+> - ```parameter```: the parameter to search through in the database
+>
 > Output: ```dataObject``` |  ```-1``` for not found 
 
 ##### \# Update
@@ -105,9 +105,9 @@ This method is provided to generate fake data to facilitate tests of the databas
 ```
 
 > Input: 
-> - ```idIdentifier```: **required** > the Id of the object to be updated 
+> - ```idIdentifier```: **required** -> the Id of the object to be updated 
 > - ```property: parameter```: the pair property and parameter to be updated
-
+>
 > Output: ```message```: ```"Success"``` | ```"Error"```
 
 ##### \# Delete
@@ -117,8 +117,8 @@ This method is provided to generate fake data to facilitate tests of the databas
 ```
 
 > Input: 
-- ```idIdentifier```: the Id of the object to be deleted 
-
+> - ```idIdentifier```: the Id of the object to be deleted 
+>
 > Output: ```message```: ```"Success"``` | ```"Error"```
 
 *Note: delete is a JavaScript reserved keyword that should be avoid to be used.
