@@ -120,7 +120,7 @@ dataObject = {
 	Weight: float,      // in kg
 	Dimensions: {
 		Height: float,  //in cm
-		Width: float,  //in cm
+		Width: float,  	//in cm
 		Breadth: float, //in cm
 	}
 }
