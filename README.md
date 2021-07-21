@@ -110,7 +110,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 > - ```property```: the identifier for the given parameter
 > - ```parameter```: the parameter to search through in the database
 >
-> Output: ```dataObject``` |  ```-1``` for not found 
+> Output: ```dataObject``` | ```dataObjArray```|  ```-1``` for not found 
 
 #### \# Update
 
@@ -148,8 +148,6 @@ This method is provided to generate fake data to facilitate tests of the databas
 
 The system accepts the following input for the registration of a new customer in the database.
 
-*Note: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.
-
 ```javascript
 dataObject = {
 	Id: "cus_00000001",
@@ -178,11 +176,20 @@ dataObject = {
 }
 ```
 
+*__Note__: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.*
+
+### Starting a Customer Database
+
+```javascript
+const customerDB = new Database();
+
+const fakeObject = customerDB.mock();
+
+customerDB.create(fakeObject);
+```
 ## Registration System for Products
 
 The system accepts the following input for the registration of a new customer in the database.
-
-*Note: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.
 
 ```javascript
 dataObject = {
@@ -204,6 +211,17 @@ dataObject = {
 		Breadth: float, //in cm
 	}
 }
+```
+*__Note__: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.*
+
+### Starting a Product Database
+
+```javascript
+const productDB = new Database();
+
+const fakeObject = productDB.mock();
+
+productDB.create(fakeObject);
 ```
 
 ## Local Database
