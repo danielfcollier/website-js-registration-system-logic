@@ -50,7 +50,7 @@ const dataObjArray = database.read({property: parameter});
 
 ```javascript
 const message = database.update({
-	Id: idIdentifier,
+	Id: idParameter,
 	property: parameter
 });
 ```
@@ -60,32 +60,12 @@ const message = database.update({
 \# Delete:
 
 ```javascript
-const message = database.remove(idIdentifier);
+const message = database.remove(idParameter);
 ```
 
 > *See also [its description.](#-delete)*
 
-\# Mock:
-
-```javascript
-const fakeObject = database.mock();
-```
-
-> *See also [its description.](#-create-mock-object)*
-
 ## Methods Description
-
-### \# Generate Mock Object
-
-```javascript
-.mock()
-```
-
-This method is provided to generate fake data to facilitate tests of the database logic.
-
-> Input: **empty**
->
-> Output: returns a fake data object to be used to create new customers.
 
 ### \# Create
 
@@ -111,19 +91,19 @@ This method is provided to generate fake data to facilitate tests of the databas
 > - ```property```: the identifier for the given parameter
 > - ```parameter```: the parameter to search through in the database
 >
-> Output: ```dataObject``` | ```dataObjArray```|  ```-1``` for not found 
+> Output: ```dataObject``` | ```dataObjArray``` |  ```-1``` for not found 
 
 ### \# Update
 
 ```javascript
 .update({
-	Id: idIdentifier,
+	Id: idParameter,
 	property: parameter
 })
 ```
 
 > Input: 
-> - ```idIdentifier```: **required** -> the Id of the object to be updated 
+> - ```idParameter```: **required** -> the Id of the object to be updated 
 > - ```property: parameter```: the pair property and parameter to be updated
 >
 > Output: ```message```: ```"Success"``` | ```"Error"```
@@ -131,19 +111,15 @@ This method is provided to generate fake data to facilitate tests of the databas
 ### \# Delete
 
 ```javascript
-.remove(idIdentifier)
+.remove(idParameter)
 ```
 
 > Input: 
-> - ```idIdentifier```: the Id of the object to be deleted 
+> - ```idParameter```: the Id of the object to be deleted 
 >
 > Output: ```message```: ```"Success"``` | ```"Error"```
 
 *__Note__: delete is a JavaScript reserved keyword that should be avoid to be used.*
-
-## Additional Features
-
-
 
 ## Registration System for Customers
 
@@ -155,9 +131,9 @@ dataObject = {
 	Name: "João da Silva",
 	Email: "joaosilvafake@email.com",
 	Birthday: "1985-01-10",
-	Document: "XXX.XXX.XXX-XX" | , 
-	Type: "CPF" | "CPNJ",
-	ExtraDocument: "RG",
+	Document: "XXX.XXX.XXX-XX",  
+	Type: "CPF",
+	ExtraDocument: "RG 234-5 SSP/SC",
 	Phone: "(48) 99889-1234",
 	DeliveryAddress: {
 		Street: "Rua Pirineus",
@@ -169,7 +145,7 @@ dataObject = {
 		Country: "Brasil",
 		Zipcode: "88.035-615"
 	},
-	IsSameAddress: type boolean,
+	IsSameAddress: true, //type boolean
 	BillingAddress: {
         ...DeliveryAddress
         // changed properties
@@ -183,10 +159,6 @@ dataObject = {
 
 ```javascript
 const customerDB = new Database();
-
-const fakeObject = customerDB.mock();
-
-customerDB.create(fakeObject);
 ```
 ## Registration System for Products
 
@@ -219,15 +191,11 @@ dataObject = {
 
 ```javascript
 const productDB = new Database();
-
-const fakeObject = productDB.mock();
-
-productDB.create(fakeObject);
 ```
 
 ## Local Database
 
-For exemplary purposes, all the stored data is also stored in the ```window``` ```localStorage``` object.
+For exemplary purposes, all the stored data is also stored in the ```window``` object within the property ```localStorage```.
 
 Type at the browser console ```localStorage``` to see all the stored data that you have entered while navigation in the website.
 
