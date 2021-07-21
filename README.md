@@ -12,7 +12,7 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 All operations are CRUD (create, read, update, and delete) based with JS routines.
 
-### # Create
+### \# Create
 
 Method:
 
@@ -42,7 +42,7 @@ Input:
 
 Output: ```dataObject``` |  ```-1``` for not found 
 
-### Update
+### \# Update
 
 ```javascript
 .update({
@@ -57,7 +57,7 @@ Input:
 
 Output: ```.message```: ```"Success"``` | ```"Error"```
 
-### Delete
+### \# Delete
 
 ```javascript
 .delete(idIdentifier)
@@ -91,8 +91,8 @@ dataObject = {
 		State: "SC",
 		Country: "Brasil",
 		Zipcode: "88.035-615"
-	}
-	IsSameAddress: type boolean
+	},
+	IsSameAddress: type boolean,
 	BillingAddress: {
         ...DeliveryAddress,
         // changed properties
@@ -114,12 +114,13 @@ dataObject = {
 	Taxes: {
         Percentage: float,
         FixedValue: float,
-    }
+    },
 	Weight: float,      // in kg
 	Dimensions: {
 		Height: float,  //in cm
 		Width: float,  //in cm
 		Breadth: float, //in cm
+	}
 }
 ```
 
