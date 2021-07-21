@@ -75,13 +75,13 @@ Members of the database have the following structure and parameters:
 ```
 {
     Id: "cus_00000001",
-	Name: "João da Silva Name",
-	Email: "joaosilvafake@email.com",
-	Birthday: "1985-01-10",
-	Document: "XXX.XXX.XXX-XX" | , 
-	Type: "CPF" | "CPNJ",
-	ExtraDocument: "RG",
-	Phone: "(48) 99889-1234",
+Name: "João da Silva Name",
+Email: "joaosilvafake@email.com",
+Birthday: "1985-01-10",
+Document: "XXX.XXX.XXX-XX" | , 
+Type: "CPF" | "CPNJ",
+ExtraDocument: "RG",
+Phone: "(48) 99889-1234",
 	DeliveryAddress: {
 		Street: "Rua Pirineus",
 		Details: "Bloco A Apto 306, Res. Solar da Primavera",
