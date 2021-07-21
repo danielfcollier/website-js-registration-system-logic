@@ -74,8 +74,8 @@ const fakeObject = database.mock();
 > *See also [its description.](#-create-mock-object)*
 
 ***
-### Methods Description
 ***
+### Methods Description
 
 #### \# Generate Mock Object
 
