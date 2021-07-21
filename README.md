@@ -19,6 +19,7 @@ Method:
 ```javascript
 .create(dataObject)
 ```
+
 Input: 
 - ```dataObject```: object with properties for a given database member
 (see Customers Object and Products Object)
@@ -29,9 +30,43 @@ Output:
 
 ### Read
 
+Method:
+
+```javascript
+.read({property: parameter})
+```
+
+Input: 
+- ```property```: the identifier for the given parameter
+- ```parameter```: the parameter to search through in the database
+
+Output: ```dataObject``` |  ```-1``` for not found 
+
 ### Update
 
+```javascript
+.update({
+	Id: idIdentifier,
+	property: parameter
+})
+```
+
+Input: 
+- ```idIdentifier```: **required** > the Id of the object to be updated 
+- ```property: parameter```: the pair property and parameter to be updated
+
+Output: ```.message```: "Success" | "Error"
+
 ### Delete
+
+```javascript
+.delete(idIdentifier)
+```
+
+Input: 
+- ```idIdentifier```: the Id of the object to be deleted 
+
+Output: ```.message```: "Success" | "Error"
 
 ## Registration System for Customers
 
@@ -59,7 +94,7 @@ dataObject = {
 	}
 	IsSameAddress: boolean
 	BillingAddress: {
-        ...DeliveryAdress,
+        ...DeliveryAddress,
         // changed properties
     }
 }
@@ -83,7 +118,7 @@ dataObject = {
 	Weight: float,      // in kg
 	Dimensions: {
 		Height: float,  //in cm
-		Witdth: float,  //in cm
+		Width: float,  //in cm
 		Breadth: float, //in cm
 }
 ```
