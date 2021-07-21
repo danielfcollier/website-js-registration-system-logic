@@ -28,7 +28,7 @@ const database = new Database(searchProperties);
 const {isCreated, message} = database.create(dataObject);
 ```
 
-> See also [its description.](/#-create)
+> See also [its description.](#-create)
 
 \# Read:
 
@@ -36,7 +36,7 @@ const {isCreated, message} = database.create(dataObject);
 const dataObject = database.read({property: parameter})
 ```
 
-> See also [its description.](/#-read)
+> See also [its description.](#-read)
 
 \# Update:
 
@@ -47,7 +47,7 @@ const message = database.update({
 })
 ```
 
-> See also [its description.](/#-update)
+> See also [its description.](#-update)
 
 \# Delete:
 
@@ -63,7 +63,7 @@ const message = database.remove(idIdentifier)
 const fakeObject = database.mock();
 ```
 
-> See also [its description.](#-create)
+> See also [its description.](#-create-mock-object)
 ### Methods Description
 
 #### \# Generate Mock Object
