@@ -18,19 +18,19 @@ const database = new Database(searchProperties);
 
 ### All Methods:
 
-Create:
+\# Create:
 
 ```javascript
 const {isCreated, message} = database.create(dataObject);
 ```
 
-Read:
+\# Read:
 
 ```javascript
 const dataObject = database.read({property: parameter})
 ```
 
-Update:
+\# Update:
 
 ```javascript
 const message = database.update({
@@ -39,13 +39,13 @@ const message = database.update({
 })
 ```
 
-Delete:
+\# Delete:
 
 ```javascript
 const message = database.remove(idIdentifier)
 ```
 
-Mock:
+\# Mock:
 
 ```javascript
 const fakeObject = database.mock();
@@ -53,19 +53,19 @@ const fakeObject = database.mock();
 
 ### Methods Description
 
-#### Mock Object
+#### \# Mock Object
 
 This method is provided to generate fake data to facilitate tests of the database logic.
 
-Method:
+- Method:
 
 ```javascript
 .mock()
 ```
 
-Input: **empty**
+- Input: **empty**
 
-Output: returns a fake data object to be used to create new customers.
+- Output: returns a fake data object to be used to create new customers.
 
 
 #### Store Procedures
