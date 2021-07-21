@@ -74,7 +74,7 @@ Output: ```.message```: ```"Success"``` | ```"Error"```
 
 The system accepts the following input for the registration of a new customer in the database.
 
-*Note: this is an exemplary and explanatory ```dataObject``. So, please, adjust properly your inputs.
+*Note: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.
 
 ```javascript
 dataObject = {
@@ -108,7 +108,7 @@ dataObject = {
 
 The system accepts the following input for the registration of a new customer in the database.
 
-*Note: this is an exemplary and explanatory ```dataObject``. So, please, adjust properly your inputs.
+*Note: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.
 
 ```javascript
 dataObject = {
