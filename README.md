@@ -23,7 +23,6 @@ const database = new Database();
 ### All Methods:
 
 \# Create:
-***
 
 ```javascript
 const {isCreated, message} = database.create(dataObject);
@@ -32,7 +31,6 @@ const {isCreated, message} = database.create(dataObject);
 > *See also [its description.](#-create)*
 
 \# Read:
-***
 
 Unique search:
 
@@ -74,7 +72,10 @@ const fakeObject = database.mock();
 ```
 
 > *See also [its description.](#-create-mock-object)*
+
+***
 ### Methods Description
+***
 
 #### \# Generate Mock Object
 
