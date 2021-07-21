@@ -55,7 +55,7 @@ const message = database.update({
 const message = database.remove(idIdentifier)
 ```
 
-> See also [its description.](/#-delete)
+> See also [its description.](#-delete)
 
 \# Mock:
 
@@ -63,7 +63,7 @@ const message = database.remove(idIdentifier)
 const fakeObject = database.mock();
 ```
 
-> See also [its description.](/#-create)
+> See also [its description.](#-create)
 ### Methods Description
 
 #### \# Generate Mock Object
