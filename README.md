@@ -35,7 +35,58 @@ Output:
 
 ## Registration System for Customers
 
+Members of the database have the following structure and parameters:
+
+```javascript
+dataObject = {
+    Id: "cus_XXXXXXXX",
+	Name: "Full Name",
+	Email: "your@email.com",
+	Birthday: "year-MM-dd",
+	Document: "XXX.XXX.XXX-XX" | , 
+	Type: "CPF" | "CPNJ",
+	ExtraDocument: "RG",
+	Phone: "(48) 99889-1234",
+	DeliveryAddress: {
+		Street: "Rua Pirineus",
+		Details: "Bloco A Apto 306, Res. Solar da Primavera",
+		Number: 86,
+		Neighborhood: "Córrego Grande",
+		City: "Florianópolis",
+		State: "SC",
+		Country: "Brasil",
+		Zipcode: "88.035-615"
+	}
+	IsSameAddress: boolean
+	BillingAddress: {
+        ...DeliveryAdress,
+        // changed properties
+    }
+}
+```
+
 ## Registration System for Products
+
+```javascript
+dataObject = {
+    Id: "pro_XXXXXXXX",
+	SKU: ,
+	Description: "product description",
+	Category: "category"
+	Status: "InStock" | "OutOfStock" | "ToOrder",
+	Quantity: integer,
+	Price: twoDecimalsFloat,
+	Taxes: {
+        Percentage: float,
+        FixedValue: float,
+    }
+	Weight: float,      // in kg
+	Dimensions: {
+		Height: float,  //in cm
+		Witdth: float,  //in cm
+		Breadth: float, //in cm
+}
+```
 
 ## Extra Features
 
