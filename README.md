@@ -28,11 +28,15 @@ const database = new Database(searchProperties);
 const {isCreated, message} = database.create(dataObject);
 ```
 
+> See also [its description.](/#-create)
+
 \# Read:
 
 ```javascript
 const dataObject = database.read({property: parameter})
 ```
+
+> See also [its description.](/#-read)
 
 \# Update:
 
@@ -43,11 +47,15 @@ const message = database.update({
 })
 ```
 
+> See also [its description.](/#-update)
+
 \# Delete:
 
 ```javascript
 const message = database.remove(idIdentifier)
 ```
+
+> See also [its description.](/#-delete)
 
 \# Mock:
 
@@ -55,6 +63,7 @@ const message = database.remove(idIdentifier)
 const fakeObject = database.mock();
 ```
 
+> See also [its description.](/#-create)
 ### Methods Description
 
 #### \# Generate Mock Object
@@ -95,7 +104,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 >
 > Output: ```dataObject``` |  ```-1``` for not found 
 
-##### \# Update
+#### \# Update
 
 ```javascript
 .update({
@@ -110,7 +119,7 @@ This method is provided to generate fake data to facilitate tests of the databas
 >
 > Output: ```message```: ```"Success"``` | ```"Error"```
 
-##### \# Delete
+#### \# Delete
 
 ```javascript
 .remove(idIdentifier)
