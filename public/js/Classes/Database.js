@@ -1,41 +1,66 @@
 export default class Database {
     // ---
-    constructor(keys = ["Id"]) {
-        this.keys = keys;
-        this._dto = {};
-        this._setDtoNull();
+    constructor(objectTemplate) {
+        this._modelArray = this._getModel(objectTemplate);
+        this._dto = Object.assign(objectTemplate, {});
+        this._setDtoNull(this._dto, this._modelArray);
     }
     // ---
-    _setDtoNull() {
-        this.keys.forEach(property => this._dto[property] = null);
+    _getModel(objectTemplate) {
+        const modelArray = [];
+        for (const property in objectTemplate) {
+            if (typeof objectTemplate[property] !== "object") {
+                modelArray.push(property);
+            }
+            else {
+                modelArray.push([property, this._getModel(objectTemplate[property])]);
+            }
+        }
+
+        return modelArray;
+    }
+    // ---
+    _setDtoNull(dataObject, modelArray) {
+        // this.model.forEach(property => this._dto[property] = null);
+        modelArray
+        .forEach(property => {
+            if (typeof property !== "object") {
+                dataObject[property] = null;
+            }
+            else {
+                this._setDtoNull(dataObject[property[0]], property[1]);
+            }
+        })
+    }
+    // ---
+    _doDataTransfer(dataObject) {
+        for (const property in dataObject) {
+            this._dto[property] = dataObject[property];
+        }
     }
     // ---
     create(dataObject) {
         let isCreated = false;
 
-        isCreated = (this.read(dataObject.Id) === -1) ? false : true;
+        isCreated = (this.read(dataObject.Id) === "not found") ? false : true;
 
         if (isCreated) {
             return { isCreated: false, message: "Customer already created" };
         }
         else {
             try {
-                for (const property in dataObject) {
-                    this._dto[property] = dataObject[property];
-                }
-
-                const isNotNull = property => this._dto[property] ? true : false;
-
-                isCreated = this.keys.some(isNotNull);
+                this._doDataTransfer(dataObject);
 
                 this._createLocal();
-                this._createStore();
+                //this._createStore();
+
+                isCreated = true;
             }
             catch {
                 isCreated = false;
             }
             finally {
-                this._setDtoNull();
+                this._setDtoNull(this._dto, this._modelArray);
                 return { isCreated, message: isCreated ? "Success" : "Error" };
             }
         }
@@ -55,7 +80,7 @@ export default class Database {
             dataObject = null;
         }
 
-        return dataObject ? JSON.parse(dataObject) : -1;
+        return dataObject ? JSON.parse(dataObject) : "not found";
     }
     // ---
     _readLocal(idParameter) {
@@ -65,7 +90,7 @@ export default class Database {
     update(idParameter, changesObject) {
         const dataObject = this.read(idParameter);
 
-        if (dataObject === -1) {
+        if (dataObject === "not found") {
             return "Error: object not found";
         }
 
@@ -78,7 +103,7 @@ export default class Database {
                     continue;
                 }
 
-                if (this._dto.hasOwnProperty(property) && changesObject[property] !== null ) { 
+                if (this._dto.hasOwnProperty(property) && changesObject[property] !== null) {
 
                     this._logUpdates({
                         From: dataObject[property],
@@ -89,8 +114,13 @@ export default class Database {
 
                     dataObject[property] = changesObject[property];
                 }
+
+                else {
+                    console.error(`Property ${property} is not part of the database model`)
+                }
             }
 
+            this._updateLocal(idParameter, dataObject);
 
             isUpdated = true;
         }
@@ -101,7 +131,8 @@ export default class Database {
         return isUpdated ? "Success" : "Error";
     }
     // ---
-    _updateLocal(idParameter) {
+    _updateLocal(idParameter, dataObject) {
+        this._doDataTransfer(dataObject);
         localStorage.setItem(idParameter, JSON.stringify(this._dto));
     }
     // ----------------------------------------------------------------------------------------------
@@ -113,7 +144,7 @@ export default class Database {
     remove(idParameter) {
         let isCreated = false;
 
-        isCreated = (this.read(idParameter) === -1) ? false : true;
+        isCreated = (this.read(idParameter) === "not found") ? false : true;
 
         if (isCreated) {
             const isDeleted = this._removeLocal(idParameter);
