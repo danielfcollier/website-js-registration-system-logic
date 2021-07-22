@@ -209,18 +209,18 @@ productTemplate = {
 	SKU: "UGG-BB-PUR-06",
 	Description: "product description",
 	Category: "category",
-	Status: "InStock" | "OutOfStock" | "ToOrder",
-	Quantity: integer,
-	Price: twoDecimalsFloat,
+	Status: '"InStock" | "OutOfStock" | "ToOrder"',
+	Quantity: "integer",
+	Price: "twoDecimalsFloat",
 	Taxes: {
-        Percentage: float,
-        FixedValue: float,
+        Percentage: "float",
+        FixedValue: "float",
     },
-	Weight: float,		// in kg
+	Weight: "float",		// in kg
 	Dimensions: {
-		Height: float,  //in cm
-		Width: float,  	//in cm
-		Breadth: float, //in cm
+		Height: "float",  //in cm
+		Width: "float",  	//in cm
+		Breadth: "float", //in cm
 	}
 }
 ```
