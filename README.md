@@ -91,7 +91,7 @@ const objectTemplate = {
 		Country: "Brasil",
 		Zipcode: "88.035-615"
 	},
-	IsSameAddress: true, //type boolean
+	IsSameAddress: true,
 	BillingAddress: {
 		Street: "Rua Pirineus",
 		Details: "Bloco A Apto 306, Res. Solar da Primavera",
@@ -122,27 +122,22 @@ const objectTemplate = {
 ### \# Read
 
 ```javascript
-.read({property: parameter})
+.read(idParameter)
 ```
 
-> Input: 
-> - ```property```: the identifier for the given parameter
-> - ```parameter```: the parameter to search through in the database
+> Input: ```idParameter```: the Id of the object to be updated 
 >
 > Output: ```dataObject``` | ```dataObjArray``` |  ```-1``` for not found 
 
 ### \# Update
 
 ```javascript
-.update({
-	Id: idParameter,
-	property: parameter
-})
+.update(idParameter, changesObject = {property: parameter})
 ```
 
 > Input: 
-> - ```idParameter```: **required** -> the Id of the object to be updated 
-> - ```property: parameter```: the pair property and parameter to be updated
+> - ```idParameter```: the Id of the object to be updated 
+> - ```property: parameter```: pairs of property and parameter to be updated
 >
 > Output: ```message```: ```"Success"``` | ```"Error"```
 

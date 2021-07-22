@@ -4,6 +4,7 @@ export default class Database {
         this._modelArray = this._getModel(objectTemplate);
         this._dto = Object.assign(objectTemplate, {});
         this._setObjectNull(this._dto, this._modelArray);
+        this.template = this._dto;
     }
     // ---
     _getModel(objectTemplate) {
