@@ -64,10 +64,12 @@ const message = database.remove(idParameter);
 new Database(objectTemplate);
 ```
 
-> ```objectTemplate```
->
-> Default value = {Id}
-> 
+```objectTemplate```
+
+> Default property 
+```javascript
+Id
+``` 
 > Example
 ```javascript
 const objectTemplate = {
