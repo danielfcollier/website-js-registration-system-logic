@@ -51,7 +51,7 @@ export default class Database {
             try {
                 this._doDataTransfer(dataObject);
 
-                this._createLocal();
+                this._create();
                 //this._createStore();
 
                 isCreated = true;
@@ -66,14 +66,14 @@ export default class Database {
         }
     }
     // ---
-    _createLocal() {
+    _create() {
         localStorage.setItem(this._dto.Id, JSON.stringify(this._dto));
     }
     // ---
     read(idParameter) {
         let dataObject;
         try {
-            dataObject = this._readLocal(idParameter);
+            dataObject = this._read(idParameter);
             //dataObject = this._readStore();
         }
         catch {
@@ -83,7 +83,7 @@ export default class Database {
         return dataObject ? JSON.parse(dataObject) : "not found";
     }
     // ---
-    _readLocal(idParameter) {
+    _read(idParameter) {
         return localStorage.getItem(idParameter);
     }
     // ---
@@ -120,7 +120,7 @@ export default class Database {
                 }
             }
 
-            this._updateLocal(idParameter, dataObject);
+            this._update(idParameter, dataObject);
 
             isUpdated = true;
         }
@@ -131,7 +131,7 @@ export default class Database {
         return isUpdated ? "Success" : "Error";
     }
     // ---
-    _updateLocal(idParameter, dataObject) {
+    _update(idParameter, dataObject) {
         this._doDataTransfer(dataObject);
         localStorage.setItem(idParameter, JSON.stringify(this._dto));
     }
@@ -147,7 +147,7 @@ export default class Database {
         isCreated = (this.read(idParameter) === "not found") ? false : true;
 
         if (isCreated) {
-            const isDeleted = this._removeLocal(idParameter);
+            const isDeleted = this._remove(idParameter);
             //this._removeStore(idParameter);
             return isDeleted ? "Success" : "Error: try again";
         }
@@ -156,7 +156,7 @@ export default class Database {
         }
     }
     // ---
-    _removeLocal(idParameter) {
+    _remove(idParameter) {
         try {
             localStorage.removeItem(idParameter);
             return true;

@@ -8,6 +8,8 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 ## Demo Page
 
+Use ```index.html``` to play in the browser console!
+
 ## Database Class
 
 Usage:
@@ -154,6 +156,19 @@ const objectTemplate = {
 
 *__Note__: delete is a JavaScript reserved keyword that should be avoid to be used.*
 
+## Private Methods
+
+The code is organized to make it easy to change the storage location through the change of the private (with a underscore before the method name) counterparts of the CRUD methods.
+
+So, if you want to change the storage location, the main focus should be adapting the private methods:
+
+> ```._create()```
+> ```._read()```
+> ```._update()```
+> ```._remove()```
+
+Other methods are provided for internal logic, they are not part of the provided documentation.
+
 ## Registration System for Customers
 
 The system accepts the following input for the registration of a new customer in the database.
@@ -197,6 +212,9 @@ customerTemplate = {
 ### Starting a Customer Database
 
 ```javascript
+import Database from "./Classes/Database.js";
+import customerTemplate from "./Config/customerTemplate.js";
+
 const customerDB = new Database(customerTemplate);
 ```
 ## Registration System for Products
@@ -229,6 +247,9 @@ productTemplate = {
 ### Starting a Product Database
 
 ```javascript
+import Database from "./Classes/Database.js";
+import productTemplate from "./Config/productTemplate.js";
+
 const productDB = new Database(productTemplate);
 ```
 
