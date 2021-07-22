@@ -70,7 +70,7 @@ new Database(objectTemplate);
 ```javascript
 Id
 ``` 
-> Example
+> Example: the property **Id** is mandatory.
 ```javascript
 const objectTemplate = {
 	Id: "cus_00000001",
@@ -102,7 +102,7 @@ const objectTemplate = {
 		Country: "Brasil",
 		Zipcode: "88.035-615"
 	}
-}
+};
 ```
 
 ### \# Create
@@ -159,7 +159,7 @@ const objectTemplate = {
 The system accepts the following input for the registration of a new customer in the database.
 
 ```javascript
-dataObject = {
+customerTemplate = {
 	Id: "cus_00000001",
 	Name: "João da Silva",
 	Email: "joaosilvafake@email.com",
@@ -178,12 +178,18 @@ dataObject = {
 		Country: "Brasil",
 		Zipcode: "88.035-615"
 	},
-	IsSameAddress: true, //type boolean
+	IsSameAddress: true,
 	BillingAddress: {
-        ...DeliveryAddress
-        // changed properties
-    }
-}
+		Street: "Rua Pirineus",
+		Details: "Bloco A Apto 306, Res. Solar da Primavera",
+		Number: 86,
+		Neighborhood: "Córrego Grande",
+		City: "Florianópolis",
+		State: "SC",
+		Country: "Brasil",
+		Zipcode: "88.035-615"
+	}
+};
 ```
 
 *__Note__: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.*
@@ -191,14 +197,14 @@ dataObject = {
 ### Starting a Customer Database
 
 ```javascript
-const customerDB = new Database();
+const customerDB = new Database(customerTemplate);
 ```
 ## Registration System for Products
 
 The system accepts the following input for the registration of a new customer in the database.
 
 ```javascript
-dataObject = {
+productTemplate = {
 	Id: "pro_00000001",
 	SKU: "UGG-BB-PUR-06",
 	Description: "product description",
@@ -223,7 +229,7 @@ dataObject = {
 ### Starting a Product Database
 
 ```javascript
-const productDB = new Database();
+const productDB = new Database(productTemplate);
 ```
 
 ## Local Database
