@@ -8,10 +8,6 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 ## Demo Page
 
-## Store Procedures
-
-All operations are CRUD (create, read, update, and delete) based with JS routines.
-
 ## Database Class
 
 Usage:
@@ -20,7 +16,9 @@ Usage:
 const database = new Database();
 ```
 
-### All Methods:
+### Public Methods:
+
+All operations are CRUD (create, read, update, and delete) based with JS routines.
 
 \# Create:
 
