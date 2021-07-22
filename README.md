@@ -163,8 +163,11 @@ The code is organized to make it easy to change the storage location through the
 So, if you want to change the storage location, the main focus should be adapting the private methods:
 
 > ```._create()```
+>
 > ```._read()```
+>
 > ```._update()```
+>
 > ```._remove()```
 
 Other methods are provided for internal logic, they are not part of the provided documentation.
@@ -207,7 +210,7 @@ customerTemplate = {
 };
 ```
 
-*__Note__: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.*
+*__Note__: this is an exemplary and explanatory ```customerTemplate```. So, please, adjust properly your inputs.*
 
 ### Starting a Customer Database
 
@@ -242,7 +245,7 @@ productTemplate = {
 	}
 }
 ```
-*__Note__: this is an exemplary and explanatory ```dataObject```. So, please, adjust properly your inputs.*
+*__Note__: this is an exemplary and explanatory ```productTemplate```. So, please, adjust properly your inputs.*
 
 ### Starting a Product Database
 
