@@ -1,9 +1,9 @@
 export default class Database {
     // ---
-    constructor(objectTemplate) {
+    constructor(objectTemplate = { Id }) {
         this._modelArray = this._getModel(objectTemplate);
         this._dto = Object.assign(objectTemplate, {});
-        this._setDtoNull(this._dto, this._modelArray);
+        this._setObjectNull(this._dto, this._modelArray);
     }
     // ---
     _getModel(objectTemplate) {
@@ -20,17 +20,16 @@ export default class Database {
         return modelArray;
     }
     // ---
-    _setDtoNull(dataObject, modelArray) {
-        // this.model.forEach(property => this._dto[property] = null);
+    _setObjectNull(dataObject, modelArray) {
         modelArray
-        .forEach(property => {
-            if (typeof property !== "object") {
-                dataObject[property] = null;
-            }
-            else {
-                this._setDtoNull(dataObject[property[0]], property[1]);
-            }
-        })
+            .forEach(property => {
+                if (typeof property !== "object") {
+                    dataObject[property] = null;
+                }
+                else {
+                    this._setObjectNull(dataObject[property[0]], property[1]);
+                }
+            })
     }
     // ---
     _doDataTransfer(dataObject) {
@@ -60,7 +59,7 @@ export default class Database {
                 isCreated = false;
             }
             finally {
-                this._setDtoNull(this._dto, this._modelArray);
+                this._setObjectNull(this._dto, this._modelArray);
                 return { isCreated, message: isCreated ? "Success" : "Error" };
             }
         }
@@ -105,7 +104,7 @@ export default class Database {
 
                 if (this._dto.hasOwnProperty(property) && changesObject[property] !== null) {
 
-                    this._logUpdates({
+                    this._logUpdate({
                         From: dataObject[property],
                         To: changesObject[property],
                         Id: dataObject.Id,
@@ -135,8 +134,8 @@ export default class Database {
         this._doDataTransfer(dataObject);
         localStorage.setItem(idParameter, JSON.stringify(this._dto));
     }
-    // ----------------------------------------------------------------------------------------------
-    _logUpdates(objLog) {
+    // ---
+    _logUpdate(objLog) {
         console.log(`### Member Update # Id: ${objLog.Id} > Property: ${objLog.Property}` +
             ` > From: ${objLog.From} > To: ${objLog.To}`);
     }
@@ -148,7 +147,7 @@ export default class Database {
 
         if (isCreated) {
             const isDeleted = this._removeLocal(idParameter);
-            //this._removeStore(idIdentifier);
+            //this._removeStore(idParameter);
             return isDeleted ? "Success" : "Error: try again";
         }
         else {
