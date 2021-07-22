@@ -258,9 +258,3 @@ const productDB = new Database(productTemplate);
 For exemplary purposes, all the stored data is also stored in the ```window``` object within the property ```localStorage```.
 
 Type at the browser console ```localStorage``` to see all the stored data that you have entered while navigation in the website.
-
-## Live Database (not implemented)
-
-A [Google Sheets](mylink.com) integrated with the website through an Apps Script endpoint.
-
-The code in provided in this [repository](mylink.com).
