@@ -13,8 +13,12 @@ Developed as part of the training Hiring Coders provided by VTEX:
 Usage:
 
 ```javascript
-const database = new Database();
+const database = new Database(objectTemplate);
 ```
+
+The ```objectTemplate``` is a sample JSON object with the properties for the created database. A must property - and also the default, is ```Id```.  
+
+At any time, the object template can be accessed through the database property ```.template```.
 
 ### Public Methods:
 
