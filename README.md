@@ -67,6 +67,13 @@ const message = database.remove(idParameter);
 
 ## Methods Description
 
+### \# Constructor
+
+```javascript
+new Database(keys)
+```
+
+
 ### \# Create
 
 ```javascript
