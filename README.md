@@ -18,7 +18,7 @@ const database = new Database(objectTemplate);
 
 The ```objectTemplate``` is a sample JSON object with the properties for the created database. A must property - and also the default, is ```Id```.  
 
-At any time, the object template can be accessed through the database property ```.template```.
+At any time, the object template can be accessed through the database property ```database.template```.
 
 ### Public Methods:
 
@@ -34,16 +34,8 @@ const {isCreated, message} = database.create(dataObject);
 
 \# Read:
 
-Unique search:
-
 ```javascript
-const dataObject = database.read({property: parameter});
-```
-
-Non unique search:
-
-```javascript
-const dataObjArray = database.read({property: parameter});
+const dataObject = database.read(idParameter);
 ```
 
 > *See also [its description.](#-read)*
@@ -51,10 +43,7 @@ const dataObjArray = database.read({property: parameter});
 \# Update:
 
 ```javascript
-const message = database.update({
-	Id: idParameter,
-	property: parameter
-});
+const message = database.update(idParameter, changesObject);
 ```
 
 > *See also [its description.](#-update)*
@@ -72,9 +61,47 @@ const message = database.remove(idParameter);
 ### \# Constructor
 
 ```javascript
-new Database(keys)
+new Database(objectTemplate);
 ```
 
+> ```objectTemplate```
+>
+> Default value = {Id}
+> 
+> Example
+```javascript
+const objectTemplate = {
+	Id: "cus_00000001",
+	Name: "João da Silva",
+	Email: "joaosilvafake@email.com",
+	Birthday: "1985-01-10",
+	Document: "XXX.XXX.XXX-XX",  
+	Type: "CPF",
+	ExtraDocument: "RG 234-5 SSP/SC",
+	Phone: "(48) 99889-1234",
+	DeliveryAddress: {
+		Street: "Rua Pirineus",
+		Details: "Bloco A Apto 306, Res. Solar da Primavera",
+		Number: 86,
+		Neighborhood: "Córrego Grande",
+		City: "Florianópolis",
+		State: "SC",
+		Country: "Brasil",
+		Zipcode: "88.035-615"
+	},
+	IsSameAddress: true, //type boolean
+	BillingAddress: {
+		Street: "Rua Pirineus",
+		Details: "Bloco A Apto 306, Res. Solar da Primavera",
+		Number: 86,
+		Neighborhood: "Córrego Grande",
+		City: "Florianópolis",
+		State: "SC",
+		Country: "Brasil",
+		Zipcode: "88.035-615"
+	}
+}
+```
 
 ### \# Create
 
