@@ -207,7 +207,7 @@ customerTemplate = {
 		Country: "Brasil",
 		Zipcode: "88.035-615"
 	}
-};
+}
 ```
 
 *__Note__: this is an exemplary and explanatory ```customerTemplate```. So, please, adjust properly your inputs.*
