@@ -266,6 +266,6 @@ Type at the browser console ```localStorage``` to see all the stored data that y
 
 ## Live Database (not finished)
 
-A [Google Sheets](https://script.google.com/a/macros/tuna.uy/s/AKfycbwLCRs2_zjS1LcTmJu4GnZJMZn249k4SXIKsoHTZUSq/exec) integrated with the website through an Apps Script endpoint.
+A [Google Web App](https://script.google.com/a/macros/tuna.uy/s/AKfycbwLCRs2_zjS1LcTmJu4GnZJMZn249k4SXIKsoHTZUSq/exec) integrated with the website through an Apps Script deployable app.
 
 The code in provided in this [repository](https://github.com/danielfcollier/website-js-gas-registration-system).
