@@ -8,7 +8,7 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 ## Demo Page
 
-Use ```index.html``` to play in the browser console!
+Use [the app](https://registrationsystem.netlify.app) and play in the browser console!
 
 ## Database Class
 
