@@ -10,6 +10,8 @@ Developed as part of the training Hiring Coders provided by VTEX:
 
 Use [the app](https://registrationsystem.netlify.app) and play in the browser console!
 
+*Please note: the demo includes fake data and accepts empty entries.*
+
 ## Database Class
 
 Usage:
