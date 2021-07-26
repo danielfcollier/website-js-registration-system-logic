@@ -262,8 +262,8 @@ For exemplary purposes, all the stored data is also stored in the ```window``` o
 
 Type at the browser console ```localStorage``` to see all the stored data that you have entered while navigation in the website.
 
-## Live Database (not implemented)
+## Live Database (not finished)
 
-A [Google Sheets](mylink.com) integrated with the website through an Apps Script endpoint.
+A [Google Sheets](https://script.google.com/a/macros/tuna.uy/s/AKfycbwLCRs2_zjS1LcTmJu4GnZJMZn249k4SXIKsoHTZUSq/exec) integrated with the website through an Apps Script endpoint.
 
-The code in provided in this [repository](mylink.com).
+The code in provided in this [repository](https://github.com/danielfcollier/website-js-gas-registration-system).
